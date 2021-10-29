@@ -1,0 +1,13 @@
+.top-nav-collapse {
+    background-color: #2E2E2E !important;
+}
+
+.navbar:not(.top-nav-collapse) {
+    background: transparent !important;
+}
+
+@media (max-width: 768px) {
+    .navbar:not(.top-nav-collapse) {
+        background: #2E2E2E !important;
+    }
+}

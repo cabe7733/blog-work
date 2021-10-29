@@ -1,0 +1,77 @@
+<div class="row">
+    <div class="col-xl-6 offset-xl-3">
+        <mdb-card class="my-5">
+
+            <mdb-card-header class="elegant-color text-uppercase white-text text-center py-4">
+                <h5>
+                    <strong>Registrate</strong>
+                </h5>
+            </mdb-card-header>
+
+            <!--Card content-->
+            <mdb-card-body class="px-lg-5 pt-0">
+
+                <!-- Form -->
+                <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" [noValidate] class="text-center" style="color: #1a1818;">
+
+                    <div class="form-row">
+                        <div class="col-xl-6 col-md-12">
+                            <!-- First name -->
+                            <div class="md-form">
+                                <input type="text" formControlName="name" class="form-control" mdbInput>
+                                <label>Nombre</label>
+                            </div>
+                            <div *ngIf="myForm.get('name').invalid && (myForm.get('name').dirty || myForm.get('name').touched)">
+                                <p class="text-danger">El campo nombre es requerido</p>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-12">
+                            <!-- Last name -->
+                            <div class="md-form">
+                                <input type="text" formControlName="lastname" class="form-control" mdbInput>
+                                <label>Apellido</label>
+                            </div>
+                            <div *ngIf="myForm.get('lastname').invalid && (myForm.get('lastname').dirty || myForm.get('lastname').touched)">
+                                <p class="text-danger">El campo apellido es requerido</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- E-mail -->
+                    <div class="md-form mt-0">
+                        <input type="email" formControlName="email" class="form-control" mdbInput>
+                        <label>E-mail</label>
+                        <div *ngIf="myForm.get('email').invalid && (myForm.get('email').dirty || myForm.get('email').touched)">
+                            <p class="text-danger">El campo email es requerido</p>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="col-xl-6 col-md-12">
+                            <!-- First name -->
+                            <div class="md-form">
+                                <input type="tel" formControlName="phone" class="form-control" mdbInput>
+                                <label>Telefono</label>
+                            </div>
+                        </div>
+                        <div class="col-xl-6 col-md-12">
+                            <!-- Last name -->
+                            <div class="md-form">
+                                <input type="number" formControlName="edad" class="form-control" mdbInput>
+                                <label>Edad</label>
+                            </div>
+                            <div *ngIf="myForm.get('edad').invalid && (myForm.get('edad').dirty || myForm.get('edad').touched)">
+                                <p class="text-danger">El campo edad es requerido</p>
+                            </div>
+                        </div>
+                    </div>
+                    <button mdbBtn [disabled]="myForm.invalid" color="info" outline="true" rounded="true" block="true" class="my-4 waves-effect z-depth-0" mdbWavesEffect type="submit">Enviar</button>
+
+                </form>
+                <!-- Form -->
+
+            </mdb-card-body>
+
+        </mdb-card>
+    </div>
+</div>
