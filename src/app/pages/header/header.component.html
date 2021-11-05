@@ -1,112 +1,114 @@
 <!--Main Navigation-->
 <header class="intro-header inicio">
 
-  <!--Navbar-->
-  <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
-    <mdb-navbar-brand>
-      <a class="logo navbar-brand waves-light" mdbWavesEffect href="#">BLOG WORK</a>
-    </mdb-navbar-brand>
-    <links>
-      <ul class="navbar-nav ml-auto">
-        <li class="nav-item active waves-light" mdbWavesEffect>
-          <a class="nav-link" (click)="inicio('inicio')">Inicio</a>
-        </li>
-        <li class="nav-item waves-light" mdbWavesEffect>
-          <a class="nav-link" (click)="nosotros('nosotros')">Nosotros</a>
-        </li>
-      </ul>
-    </links>
-  </mdb-navbar>
+    <!--Navbar-->
+    <mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
+        <mdb-navbar-brand>
+            <a class="logo navbar-brand waves-light" mdbWavesEffect href="#">BLOG WORK</a>
+        </mdb-navbar-brand>
+        <links>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item active waves-light" mdbWavesEffect>
+                    <a class="nav-link" (click)="inicio('inicio')">Inicio</a>
+                </li>
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" (click)="nosotros('nosotros')">Nosotros</a>
+                </li>
+                <li class="nav-item waves-light" mdbWavesEffect>
+                    <a class="nav-link" (click)="contacto('contacto')">Contacto</a>
+                </li>
+            </ul>
+        </links>
+    </mdb-navbar>
 
-  <!--Intro Section-->
-  <section class="view intro-2">
-    <div class="full-bg-img mask rgba-black-strong">
-      <div class="container flex-center">
-        <div class="d-flex align-items-center content-height w-100">
-          <div class="row flex-center pt-5 mt-3 w-100">
-            <div class="col-md-6 text-center text-md-left mb-5">
-              <div class="white-text">
-                <h2 class="h1 h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">TIPS DE EMPLEO</h2>
-                <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
-                <h6 class="wow fadeInLeft" data-wow-delay="0.3s">En esta página encontrarás consejos a tener en cuenta, recomendaciones, algunos tips y diversas plataformas que te ayudarán a conseguir el empleo al que aspiras.</h6>
-                <br>
-                <a mdbBtn color="white" (click)="saberMas('principal')" outline="true" class="text-uppercase fadeInLeft waves-light" data-wow-delay="0.3s"
-                  mdbWavesEffect>saber más <mdb-icon fas icon="arrow-down" class="ml-1"></mdb-icon></a>
-              </div>
+    <!--Intro Section-->
+    <section class="view intro-2">
+        <div class="full-bg-img mask rgba-black-strong">
+            <div class="container flex-center">
+                <div class="d-flex align-items-center content-height w-100">
+                    <div class="row flex-center pt-5 mt-3 w-100">
+                        <div class="col-md-6 text-center text-md-left mb-5">
+                            <div class="white-text">
+                                <h2 class="h1 h1-responsive font-bold wow fadeInLeft" data-wow-delay="0.3s">TIPS DE EMPLEO</h2>
+                                <hr class="hr-light wow fadeInLeft" data-wow-delay="0.3s">
+                                <h6 class="wow fadeInLeft" data-wow-delay="0.3s">En esta página encontrarás consejos a tener en cuenta, recomendaciones, algunos tips y diversas plataformas que te ayudarán a conseguir el empleo al que aspiras.</h6>
+                                <br>
+                                <a mdbBtn color="white" (click)="saberMas('principal')" outline="true" class="text-uppercase fadeInLeft waves-light" data-wow-delay="0.3s" mdbWavesEffect>saber más <mdb-icon fas icon="arrow-down" class="ml-1"></mdb-icon></a>
+                            </div>
+                        </div>
+
+                        <div class="col-md-6 col-xl-5 offset-xl-1">
+                            <!--Form-->
+                            <mdb-card class="wow fadeInRight" data-wow-delay="0.3s">
+                                <mdb-card-body>
+                                    <div class="text-center">
+                                        <h3 class="white-text text-uppercase"> Registrate</h3>
+                                        <hr class="hr-light">
+                                    </div>
+                                    <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" [noValidate] class="text-center" style="color: #1a1818;">
+
+                                        <div class="form-row">
+                                            <div class="col-xl-6 col-md-12">
+                                                <!-- First name -->
+                                                <div class="md-form">
+                                                    <input type="text" formControlName="name" class="form-control" mdbInput>
+                                                    <label>Nombre</label>
+                                                </div>
+                                                <div *ngIf="myForm.get('name').invalid && (myForm.get('name').dirty || myForm.get('name').touched)">
+                                                    <p class="text-danger">El campo nombre es requerido</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-md-12">
+                                                <!-- Last name -->
+                                                <div class="md-form">
+                                                    <input type="text" formControlName="lastname" class="form-control" mdbInput>
+                                                    <label>Apellido</label>
+                                                </div>
+                                                <div *ngIf="myForm.get('lastname').invalid && (myForm.get('lastname').dirty || myForm.get('lastname').touched)">
+                                                    <p class="text-danger">El campo apellido es requerido</p>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- E-mail -->
+                                        <div class="md-form mt-0">
+                                            <input type="email" formControlName="email" class="form-control" mdbInput>
+                                            <label>E-mail</label>
+                                            <div *ngIf="myForm.get('email').invalid && (myForm.get('email').dirty || myForm.get('email').touched)">
+                                                <p class="text-danger">El campo email es requerido</p>
+                                            </div>
+                                        </div>
+
+                                        <div class="form-row">
+                                            <div class="col-xl-6 col-md-12">
+                                                <!-- First name -->
+                                                <div class="md-form">
+                                                    <input type="tel" formControlName="phone" class="form-control" mdbInput>
+                                                    <label>Telefono</label>
+                                                </div>
+                                            </div>
+                                            <div class="col-xl-6 col-md-12">
+                                                <!-- Last name -->
+                                                <div class="md-form">
+                                                    <input type="number" formControlName="edad" class="form-control" mdbInput>
+                                                    <label>Edad</label>
+                                                </div>
+                                                <div *ngIf="myForm.get('edad').invalid && (myForm.get('edad').dirty || myForm.get('edad').touched)">
+                                                    <p class="text-danger">El campo edad es requerido</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button mdbBtn color="teal" [disabled]="myForm.invalid" mdbWavesEffect>Enviar</button>
+                                    </form>
+                                </mdb-card-body>
+                            </mdb-card>
+                            <!--/.Form-->
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <div class="col-md-6 col-xl-5 offset-xl-1">
-              <!--Form-->
-              <mdb-card class="wow fadeInRight" data-wow-delay="0.3s">
-                <mdb-card-body>
-                  <div class="text-center">
-                    <h3 class="white-text text-uppercase"> Registrate</h3>
-                    <hr class="hr-light">
-                  </div>
-                  <form [formGroup]="myForm" (ngSubmit)="onSubmit(myForm)" [noValidate] class="text-center" style="color: #1a1818;">
-
-                    <div class="form-row">
-                        <div class="col-xl-6 col-md-12">
-                            <!-- First name -->
-                            <div class="md-form">
-                                <input type="text" formControlName="name" class="form-control" mdbInput>
-                                <label>Nombre</label>
-                            </div>
-                            <div *ngIf="myForm.get('name').invalid && (myForm.get('name').dirty || myForm.get('name').touched)">
-                                <p class="text-danger">El campo nombre es requerido</p>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-md-12">
-                            <!-- Last name -->
-                            <div class="md-form">
-                                <input type="text" formControlName="lastname" class="form-control" mdbInput>
-                                <label>Apellido</label>
-                            </div>
-                            <div *ngIf="myForm.get('lastname').invalid && (myForm.get('lastname').dirty || myForm.get('lastname').touched)">
-                                <p class="text-danger">El campo apellido es requerido</p>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- E-mail -->
-                    <div class="md-form mt-0">
-                        <input type="email" formControlName="email" class="form-control" mdbInput>
-                        <label>E-mail</label>
-                        <div *ngIf="myForm.get('email').invalid && (myForm.get('email').dirty || myForm.get('email').touched)">
-                            <p class="text-danger">El campo email es requerido</p>
-                        </div>
-                    </div>
-
-                    <div class="form-row">
-                        <div class="col-xl-6 col-md-12">
-                            <!-- First name -->
-                            <div class="md-form">
-                                <input type="tel" formControlName="phone" class="form-control" mdbInput>
-                                <label>Telefono</label>
-                            </div>
-                        </div>
-                        <div class="col-xl-6 col-md-12">
-                            <!-- Last name -->
-                            <div class="md-form">
-                                <input type="number" formControlName="edad" class="form-control" mdbInput>
-                                <label>Edad</label>
-                            </div>
-                            <div *ngIf="myForm.get('edad').invalid && (myForm.get('edad').dirty || myForm.get('edad').touched)">
-                                <p class="text-danger">El campo edad es requerido</p>
-                            </div>
-                        </div>
-                    </div>
-                    <button mdbBtn color="teal" [disabled]="myForm.invalid" mdbWavesEffect>Enviar</button>
-                </form>
-                </mdb-card-body>
-              </mdb-card>
-              <!--/.Form-->
-            </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
 </header>
 <!--Main Navigation-->

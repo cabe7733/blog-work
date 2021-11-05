@@ -1,60 +1,65 @@
 .intro-header {
-  height: unset !important;
+    height: unset !important;
 }
 
 .intro-2 {
-  background: url("https://firebasestorage.googleapis.com/v0/b/blog-work-da93f.appspot.com/o/img%2Ftrabajo.jpg?alt=media&token=d708732e-3d35-4bd6-878a-ec28f14b080c")no-repeat center center;
-  background-size: cover;
+    background: url("https://firebasestorage.googleapis.com/v0/b/blog-work-da93f.appspot.com/o/img%2Ftrabajo.jpg?alt=media&token=d708732e-3d35-4bd6-878a-ec28f14b080c")no-repeat center center;
+    background-size: cover;
 }
 
 .view {
-  height: 100vh !important;
+    height: 100vh !important;
 }
 
 .top-nav-collapse {
-  background-color: #4db6ac !important;
+    background-color: #4db6ac !important;
 }
 
 .navbar:not(.top-nav-collapse) {
-  background: transparent !important;
+    background: transparent !important;
 }
 
 @media (max-width: 768px) {
-  .navbar:not(.top-nav-collapse) {
-    background: #4db6ac !important;
-  }
+    .navbar:not(.top-nav-collapse) {
+        background: #4db6ac !important;
+    }
+    .view {
+        height: 150vh !important;
+    }
+}
 
-  .view {
-    height: 150vh !important;
-  }
-
+@media (max-width: 378px) {
+    .view {
+        height: 170vh !important;
+    }
 }
 
 .full-bg-img {
-  height: 100%;
+    height: 100%;
 }
 
 .card {
-  background-color: rgba(229, 228, 255, 0.2);
+    background-color: rgba(229, 228, 255, 0.2);
 }
 
 .md-form .prefix {
-  font-size: 1.5rem;
-  margin-top: 1rem;
+    font-size: 1.5rem;
+    margin-top: 1rem;
 }
+
 .md-form label {
-  color: #ffffff;
+    color: #ffffff;
 }
+
 h6 {
-  line-height: 1.7;
+    line-height: 1.7;
 }
 
 @media (max-width: 740px) {
-  .full-height,
-  .full-height body,
-  .full-height header,
-  .full-height header .view {
-    height: 1040px;
-  }
-
+    .full-height,
+    .full-height body,
+    .full-height header,
+    .full-height header .view {
+        height: 1040px;
+    }
 }
