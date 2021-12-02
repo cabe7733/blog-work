@@ -1,0 +1,43 @@
+<div class="mt-4">
+  <a mdbBtn floating="true" size="lg" gradient="aqua" mdbWavesEffect (click)="volver()" mdbTooltip="volver" placement="right">
+    <mdb-icon fas icon="arrow-left" class="text-white"></mdb-icon>
+  </a>
+</div>
+<div class="row">
+  <div class="col-xl-6 offset-xl-3">
+    <section class="my-5" *ngIf="postData">
+
+      <!--Grid row-->
+      <div class="row">
+        <div class="col-md-12">
+          <!--Featured image-->
+          <mdb-card cascade="true" wider="true" reverse="true">
+            <div class="view-cascade overlay waves-light img-bann" mdbWavesEffect>
+              <mdb-card-img [src]="postData.imagePost" alt="Wide sample post image"></mdb-card-img>
+              <a>
+                <div class="mask rgba-white-slight"></div>
+              </a>
+            </div>
+
+            <!--Post data-->
+            <mdb-card-body cascade="true" class="text-center">
+              <h2>
+                <a class="font-weight-bold">{{postData.titlePost}} </a>
+              </h2>
+              <p> {{  postData.date.seconds*1000 | date }}</p>
+            </mdb-card-body>
+            <!--Post data-->
+          </mdb-card>
+
+          <!--Excerpt-->
+          <div class="excerpt mt-5">
+            <p [innerHtml]="postData.contentPost">
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </section>
+  </div>
+</div>
+
